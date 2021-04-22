@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Check-In On Events</string>
+    <string name="app_name">Check-in em Eventos</string>
+    <string name="events_list">Lista de Eventos</string>
+    <string name="event_details">Detalhes do Evento</string>
+    <string name="subscription">Inscreva-se!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Nome</string>
+    <string name="email_hint">exemplo@exemplo.com</string>
+    <string name="email">E-mail</string>
+    <string name="subscription_done">Inscrição realizada!</string>
+    <string name="subcription_info">Agora basta aguardar o dia do evento, anote todas as informações e aproveite!</string>
+    <string name="ok">OK</string>
+    <string name="hint_name">Maria José</string>
+    <string name="go_to">Como chegar</string>
 </resources>
