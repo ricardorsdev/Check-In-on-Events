@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/eventListFragment">
+
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="br.com.ricardorsdev.checkin_on_events.ui.views.fragments.EventListFragment"
+        tools:layout="@layout/fragment_event_list">
+
+<!--        <action-->
+<!--            android:id="@+id/action_startFragment_to_storiesFragment"-->
+<!--            app:destination="@id/storiesFragment" />-->
+    </fragment>
+
+</navigation>

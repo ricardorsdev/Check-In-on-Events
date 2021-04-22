@@ -23,8 +23,9 @@ class CustomDeserializer : JsonDeserializer<ArrayList<Event>> {
 
 		itemsJsonArray?.let { items ->
 			for (item in items) {
-
 				val jsonObject = item.asJsonObject
+
+				val people = jsonObject.get("description").asString
 				val description = jsonObject.get("description").asString
 				val image = jsonObject.get("image").asString
 				val longitude = jsonObject.get("longitude").asFloat
@@ -40,7 +41,7 @@ class CustomDeserializer : JsonDeserializer<ArrayList<Event>> {
 
 				eventList.add(
 					Event(
-						people = null,
+						people = people,
 						description = description,
 						image = image,
 						longitude = longitude,
