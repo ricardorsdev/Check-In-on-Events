@@ -23,7 +23,7 @@ class EventListViewModel @ViewModelInject constructor(
 					eventsObservable.postValue(it)
 				}
 				result.onFailure {
-
+					it.printStackTrace()
 				}
 			}
 		}

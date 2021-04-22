@@ -128,6 +128,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     style="@style/textDetail"
+                    android:text="@{price}"
                     android:layout_marginTop="@dimen/margin_small"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/guideLine"
@@ -135,17 +136,27 @@
                     tools:text="Valor: R$0,00"
                     />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_maps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/go_to"
+                    android:background="@drawable/button_border"
+                    android:layout_marginTop="@dimen/margin_big"
+                    app:layout_constraintEnd_toStartOf="@id/guideLine"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventPrice"/>
+
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_subscription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/subscription"
                     android:background="@drawable/button_border"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/margin_big"
+                    app:layout_constraintStart_toEndOf="@id/guideLine"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvEventPrice"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/tvEventPrice"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

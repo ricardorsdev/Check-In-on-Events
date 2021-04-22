@@ -1,12 +1,15 @@
 package br.com.ricardorsdev.checkin_on_events.ui.views.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.ricardorsdev.checkin_on_events.R
 import br.com.ricardorsdev.checkin_on_events.databinding.FragmentEventDetailBinding
@@ -16,6 +19,9 @@ import br.com.ricardorsdev.checkin_on_events.utils.DateUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import dagger.hilt.android.AndroidEntryPoint
+import java.lang.String.format
+import java.util.*
+
 
 @AndroidEntryPoint
 class EventDetailFragment : Fragment() {
@@ -70,8 +76,18 @@ class EventDetailFragment : Fragment() {
 
 		binding.price = "Valor: R\$${event.price}"
 
-		binding.btnSubscription.setOnClickListener {
+		binding.btnMaps.setOnClickListener {
+			val uri = format(Locale.getDefault(), "geo:%f,%f", event.latitude, event.longitude)
+			val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+			requireContext().startActivity(intent)
+		}
 
+		binding.btnSubscription.setOnClickListener {
+			val action = EventDetailFragmentDirections.actionEventDetailFragmentToSubscriptionFragment(
+				event.id,
+				event.title
+			)
+			findNavController().navigate(action)
 		}
 	}
 }

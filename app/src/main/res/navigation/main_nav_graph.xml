@@ -11,18 +11,41 @@
         tools:layout="@layout/fragment_event_list">
         <action
             android:id="@+id/action_eventListFragment_to_EventDetailFragment"
-            app:destination="@id/EventDetailFragment" />
+            app:destination="@id/eventDetailFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/EventDetailFragment"
+        android:id="@+id/eventDetailFragment"
         android:name="br.com.ricardorsdev.checkin_on_events.ui.views.fragments.EventDetailFragment"
         tools:layout="@layout/fragment_event_detail">
 
         <argument
             android:name="eventId"
             app:argType="string"/>
+
+        <action
+            android:id="@+id/action_EventDetailFragment_to_SubscriptionFragment"
+            app:destination="@id/subscriptionFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/subscriptionFragment"
+        android:name="br.com.ricardorsdev.checkin_on_events.ui.views.fragments.SubscriptionFragment"
+        tools:layout="@layout/fragment_subscription">
+
+        <argument
+            android:name="eventId"
+            app:argType="string"/>
+
+        <argument
+            android:name="eventTitle"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_SubscriptionFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment"
+            app:popUpTo="@id/eventListFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
 </navigation>
