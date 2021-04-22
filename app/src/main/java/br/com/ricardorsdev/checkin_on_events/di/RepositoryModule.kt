@@ -1,8 +1,8 @@
 package br.com.ricardorsdev.checkin_on_events.di
 
 import br.com.ricardorsdev.checkin_on_events.api.IApi
-import br.com.ricardorsdev.network.IMainRepository
-import br.com.ricardorsdev.network.MainRepository
+import br.com.ricardorsdev.checkin_on_events.network.IMainRepository
+import br.com.ricardorsdev.checkin_on_events.network.MainRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

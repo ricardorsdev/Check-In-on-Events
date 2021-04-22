@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="date"
+            type="String" />
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        app:cardElevation="@dimen/margin_small"
+        app:cardPreventCornerOverlap="false">
+
+
+        <LinearLayout
+            android:id="@+id/llEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_medium"
+            android:padding="@dimen/margin_medium">
+
+            <ImageView
+                android:id="@+id/ivEventImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_image_height"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tvEventTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{title}"
+                android:textSize="@dimen/font_detail"
+                android:textColor="@android:color/darker_gray"
+                android:textAlignment="center"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginBottom="@dimen/margin_medium"
+                tools:text="Título"/>
+
+            <TextView
+                android:id="@+id/tvEventDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{date}"
+                android:textSize="@dimen/font_detail"
+                android:textColor="@android:color/darker_gray"
+                android:textAlignment="textStart"
+                android:maxLines="2"
+                android:ellipsize="end"
+                tools:text="01/01/1990"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</layout>

@@ -9,10 +9,17 @@
         android:id="@+id/eventListFragment"
         android:name="br.com.ricardorsdev.checkin_on_events.ui.views.fragments.EventListFragment"
         tools:layout="@layout/fragment_event_list">
-
-<!--        <action-->
-<!--            android:id="@+id/action_startFragment_to_storiesFragment"-->
-<!--            app:destination="@id/storiesFragment" />-->
+        <action
+            android:id="@+id/action_eventListFragment_to_EventDetailFragment"
+            app:destination="@id/EventDetailFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/EventDetailFragment"
+        android:name="br.com.ricardorsdev.checkin_on_events.ui.views.fragments.EventDetailFragment"
+        tools:layout="@layout/fragment_event_detail">
+
+    </fragment>
+
 
 </navigation>

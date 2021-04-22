@@ -28,8 +28,8 @@ class CustomDeserializer : JsonDeserializer<ArrayList<Event>> {
 				val people = jsonObject.get("description").asString
 				val description = jsonObject.get("description").asString
 				val image = jsonObject.get("image").asString
-				val longitude = jsonObject.get("longitude").asFloat
-				val latitude = jsonObject.get("latitude").asFloat
+				val longitude = jsonObject.get("longitude").asLong
+				val latitude = jsonObject.get("latitude").asLong
 				val price = jsonObject.get("price").asDouble
 				val title = jsonObject.get("title").asString
 				val id = jsonObject.get("id").asString
@@ -49,7 +49,7 @@ class CustomDeserializer : JsonDeserializer<ArrayList<Event>> {
 						price = price,
 						title = title,
 						id = id,
-						date = date
+						date = timeStamp
 					)
 				)
 
