@@ -42,14 +42,16 @@ class EventListAdapter(
 		fun bind(event: Event, context: Context, listener: EventListListener) {
 			binding.title = event.title
 
-			event.date?.let { timestamp ->
-				binding.date = DateUtils.timestampToStringDate(timestamp, "dd/MM/yyyy HH:mm:ss")
-			}
+			val date = DateUtils.getDateFromDateTime(event.date)
+			binding.date = "Data: $date"
+
+			val time = DateUtils.getTimeFromDateTime(event.date)
+			binding.time = "Horário: $time"
 
 			event.image?.let { url ->
 				Glide.with(context)
 					.load(url)
-					.centerCrop()
+					.centerInside()
 					.error(R.drawable.ic_broken_image)
 					.diskCacheStrategy(DiskCacheStrategy.RESOURCE)
 					.into(binding.ivEventImage)

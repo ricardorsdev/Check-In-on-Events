@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -13,8 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import br.com.ricardorsdev.checkin_on_events.R
 import br.com.ricardorsdev.checkin_on_events.databinding.FragmentEventListBinding
 import br.com.ricardorsdev.checkin_on_events.models.Event
-import br.com.ricardorsdev.checkin_on_events.ui.viewModels.MainViewModel
-import br.com.ricardorsdev.checkin_on_events.ui.views.activities.MainActivity
+import br.com.ricardorsdev.checkin_on_events.ui.viewModels.EventListViewModel
 import br.com.ricardorsdev.checkin_on_events.ui.views.adapters.EventListAdapter
 import br.com.ricardorsdev.checkin_on_events.ui.views.adapters.EventListListener
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class EventListFragment : Fragment() {
 
 	private lateinit var binding: FragmentEventListBinding
-	private val viewModel: MainViewModel by viewModels()
+	private val viewModel: EventListViewModel by viewModels()
 
 	private var adapter: EventListAdapter? = null
 	private var eventList: MutableList<Event> = mutableListOf()
@@ -58,7 +56,8 @@ class EventListFragment : Fragment() {
 			eventList,
 			object : EventListListener {
 				override fun onCardViewClicked(id: String) {
-
+					val action = EventListFragmentDirections.actionEventListFragmentToEventDetailFragment(id)
+					findNavController().navigate(action)
 				}
 			})
 		binding.rvEventsList.adapter = adapter

@@ -19,6 +19,9 @@
         android:name="br.com.ricardorsdev.checkin_on_events.ui.views.fragments.EventDetailFragment"
         tools:layout="@layout/fragment_event_detail">
 
+        <argument
+            android:name="eventId"
+            app:argType="string"/>
     </fragment>
 
 

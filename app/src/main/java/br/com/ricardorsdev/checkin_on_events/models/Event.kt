@@ -7,13 +7,13 @@ import java.util.*
 
 @Parcelize
 data class Event(
-	var people: String?,
-	var date: Long?,
-	var description: String?,
-	var image: String?,
-	var longitude: Long?,
-	var latitude: Long?,
-	var price: Double?,
+	var id: String,
 	var title: String,
-	var id: String
+	var date: String,
+	var image: String? = null,
+	var description: String? = null,
+	var price: Double? = null,
+	var longitude: Float? = null,
+	var latitude: Float? = null,
+	var people: List<String>? = null
 ) : Parcelable

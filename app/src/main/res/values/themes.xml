@@ -19,16 +19,26 @@
         <item name="android:windowBackground">@drawable/bg_gradient_splash</item>
     </style>
 
-    <style name="Title">
+    <style name="textTitle">
         <item name="android:textColor">@color/color_primary_variant</item>
         <item name="android:textSize">@dimen/font_title</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAlignment">center</item>
     </style>
 
-    <style name="Detail">
-        <item name="android:textColor">@color/color_primary</item>
+    <style name="textSubtitle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/font_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="textDetail">
+        <item name="android:textColor">@android:color/darker_gray</item>
         <item name="android:textSize">@dimen/font_detail</item>
+        <item name="android:textAlignment">textStart</item>
     </style>
 
 </resources>

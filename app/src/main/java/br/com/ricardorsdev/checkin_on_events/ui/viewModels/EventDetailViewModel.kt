@@ -10,17 +10,17 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
-class MainViewModel @ViewModelInject constructor(
+class EventDetailViewModel @ViewModelInject constructor(
 	private val repository: IMainRepository
 ): ViewModel() {
 
-	val eventsObservable = MutableLiveData<List<Event>>()
+	val eventDetailsObservable = MutableLiveData<Event>()
 
-	fun getEvents() {
+	fun getEventDetails(eventId: String) {
 		viewModelScope.launch {
-			repository.getEvents().collect { result ->
+			repository.getEventDetails(eventId).collect { result ->
 				result.onSuccess {
-					eventsObservable.postValue(it)
+					eventDetailsObservable.postValue(it)
 				}
 				result.onFailure {
 

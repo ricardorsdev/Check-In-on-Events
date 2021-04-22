@@ -12,6 +12,10 @@
         <variable
             name="date"
             type="String" />
+
+        <variable
+            name="time"
+            type="String" />
     </data>
 
 
@@ -45,11 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{title}"
-                android:textSize="@dimen/font_detail"
-                android:textColor="@android:color/darker_gray"
-                android:textAlignment="center"
-                android:maxLines="2"
-                android:ellipsize="end"
+                style="@style/textSubtitle"
                 android:layout_marginBottom="@dimen/margin_medium"
                 tools:text="Título"/>
 
@@ -58,12 +58,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{date}"
-                android:textSize="@dimen/font_detail"
-                android:textColor="@android:color/darker_gray"
-                android:textAlignment="textStart"
-                android:maxLines="2"
-                android:ellipsize="end"
+                style="@style/textDetail"
                 tools:text="01/01/1990"/>
+
+            <TextView
+                android:id="@+id/tvEventTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{time}"
+                style="@style/textDetail"
+                tools:text="12:00"/>
 
         </LinearLayout>
 
